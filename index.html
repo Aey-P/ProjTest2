@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Arduino Serial Interface</title>
+  <title>Limearad</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,7 +31,7 @@
     <h2>Connect to Your Box</h2>
     <button onclick="connectSerial()">Connect</button>
 
-    <h3>Send Commands to Arduino</h3>
+    <h3>Select Modes</h3>
     <div class="button">
       <button onclick="sendToArduino('A')">Mode A (High Volt)</button>
       <button onclick="sendToArduino('B')">Mode B (Calibration)</button>
@@ -44,7 +44,7 @@
     <br><br>
     <div class="interact">
       <div class="type">
-        <label>Send any text: </label>
+        <label>Set time period: </label>
         <input type="text" id="customCommand" />
         <button onclick="sendCustom()">Send</button>
       </div>

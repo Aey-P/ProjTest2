@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Scope+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&family=Island+Moments&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #B18F6A, #9C6B4F);
+    margin: 0;
+    padding: 0;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    
+}
+  
+html, body {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+  
+button {
+    padding: 10px 15px;
+    margin: 10px;
+    font-family: 'gantari', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.637);
+}
+  
+#output {
+    white-space: pre-wrap;
+    background: #fff;
+    padding: 10px;
+    min-height: 150px;
+    border: 1px solid #ccc;
+}
+
+#home,
+#system{
+    min-height: 100vh;         
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    scroll-snap-align: start; /* For optional snap scrolling */
+}
+
+/*------------------------section bg------------------*/
+
+#home { background-color: none }
+#system {background: linear-gradient(135deg, #D4C4B6, #A88F7C); }
+
+/*------------------------section------------------*/
+
+
+
+/*------------------------section bg------------------*/
+
+/*------------------------Home------------------*/
+
+.projname h1 {
+    position: relative;
+    font-size: 55px;
+    font-family: 'libre baskerville', serif;
+    font-weight: 700;
+    margin: 20px 0;
+    margin-top: 40px;
+    color: #231709;
+    font-weight: 500;
+    justify-content: center;    
+    align-items: center;   
+}
+
+
+.name {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 20px;
+    width: 100%;
+}
+
+.name .me, .aj{
+    margin: auto;
+}
+
+.name p{
+    margin: 10px 0;
+    font-size: 16px;
+    font-family:'Gantari', sans-serif;
+    color: #2b2b2b;
+    font-weight: 400;
+    line-height: 1;
+}
+
+
+/*------------------------System------------------*/
+.system h2 {
+    position: relative;
+    font-size: 55px;
+    font-family: 'gilda display', serif;
+    font-weight: 300;
+    margin: 20px 0;
+    margin-top: 40px;
+    color: #231709;
+    justify-content: center;    
+    align-items: center;   
+}
+
+.system h3 {
+    position: relative;
+    font-size: 40px;
+    font-family: 'gantari', sans-serif;
+    font-weight: 200;
+    margin: 20px 0;
+    margin-top: 40px;
+    color: #231709;
+    justify-content: center;    
+    align-items: center;   
+}
+
+label {
+    font-size: 20px;
+    font-family: 'gantari', sans-serif;
+    font-weight: 300;
+    color: #2b2b2b;
+    line-height: 1;
+    margin: 20px 0;
+}
+
+.type{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.interact{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 300px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#customCommand {
+    margin-bottom: 10px;
+}

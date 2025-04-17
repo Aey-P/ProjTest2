@@ -1,86 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Liquid Level Measurement</title>
-  <style>
-    body { font-family: Arial; padding: 20px; background: #f0f0f0; }
-    .screen { display: none; }
-    .active { display: block; }
-    button { padding: 10px 20px; margin: 10px; }
-  </style>
+  <meta charset="UTF-8">
+  <title>Arduino Serial Interface</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="startup" class="screen active">
-    <h2>Liquid Measurement System</h2>
-    <button onclick="connectSerial()">Connect to Box</button>
-  </div>
 
-  <div id="menu" class="screen">
-    <h3>Select Mode</h3>
-    <button onclick="setMode('A')">A: High Voltage</button>
-    <button onclick="setMode('B')">B: Calibration</button>
-    <button onclick="setMode('C')">C: Measuring</button>
-    <button onclick="setMode('D')">D: Counting</button>
-  </div>
+  <div id='home' class="projname">
+    <h1 data-aos="fade-up">Liquid level and volume<br> measurement systems 
+        using <br>radiation transmission technique</h1>
 
+    <div class="name">    
+        <div class="me">
+            <p data-aos="fade-up" style="font-weight: bold;">Presented by </p>
+            <p data-aos="fade-up">Palida Singhapan NE06</p>
+            <p data-aos="fade-up">Poowanut Wattanasatean NE06</p>
+        </div>
+        
+        <div class="aj">
+            <p data-aos="fade-up" style="font-weight: bold;">Adviser</p>
+            <p data-aos="fade-up">Kamontip Ploykrachang</p>
+            <p data-aos="fade-up">Decho Thong-Aram</p>
+        </div>
+    </div>
+
+</div>
+
+  <div id="system" class="system">
+    <h2>Connect to Your Box</h2>
+    <button onclick="connectSerial()">Connect</button>
+
+    <h3>Send Commands to Arduino</h3>
+    <div class="button">
+      <button onclick="sendToArduino('A')">Mode A (High Volt)</button>
+      <button onclick="sendToArduino('B')">Mode B (Calibration)</button>
+      <button onclick="sendToArduino('C')">Mode C (Measuring)</button>
+      <button onclick="sendToArduino('D')">Mode D (Counting)</button>
+      <button onclick="sendToArduino('start')">Start</button>
+      <button onclick="sendToArduino('done')">Done</button>
+    </div>
+  
     <br><br>
-    <button onclick="switchScreen('menu')">Back to Menu</button>
-  </div>
+    <div class="interact">
+      <div class="type">
+        <label>Send any text: </label>
+        <input type="text" id="customCommand" />
+        <button onclick="sendCustom()">Send</button>
+      </div>
 
-  <!-- B -->
-  <div id="modeB" class="screen">
-    <h3>Mode B: Calibration Mode</h3>
-  
-    <label>Time Period (sec):</label>
-    <input type="number" id="calTime" /><br><br>
-    <button onclick="startCalibration()">Start Calibration</button>
-  
-    <div id="calResultsList" style="margin-top: 20px;">
-      <p><strong>Calibration Runs:</strong></p>
-      <ul id="runList"></ul>
+      <div class="opsection">
+        <h3>Arduino Output:</h3>
+        <div id="output">Waiting for connection...</div>
+      </div>
     </div>
-  
-    <div id="calInput" style="margin-top: 20px;">
-      <p>Enter Calibration Constants</p>
-      <label>Volume m:</label><input type="number" id="m1" /><br>
-      <label>Volume c:</label><input type="number" id="c1" /><br><br>
-      <label>Level m:</label><input type="number" id="m2" /><br>
-      <label>Level c:</label><input type="number" id="c2" /><br><br>
-      <button onclick="submitCalibration()">Submit Calibration</button>
-    </div>
-  
-    <p id="calStatus" style="color: green;"></p>
-    <br>
-    <button onclick="switchScreen('menu')">Back to Menu</button>
+    <script src="script.js"></script>
+    
   </div>
-  
-
-  <!-- C -->
-  <div id="modeC" class="screen">
-    <h3>Mode C: Water Measuring</h3>
-  
-    <p id="measWarning" style="color: red;"></p>
-    <button onclick="startMeasuring()">Start Measuring</button>
-  
-    <p>Volume: <span id="volDisplay">--</span></p>
-    <p>Level: <span id="lvlDisplay">--</span></p>
-  
-    <br><button onclick="switchScreen('menu')">Back to Menu</button>
-  </div>
-  
-  <!-- D -->
-  <div id="modeD" class="screen">
-    <h3>Mode D: Radiation Counting</h3>
-    <label>Time Period (sec):</label>
-    <input type="number" id="countTime" /><br><br>
-    <button onclick="startCounting()">Start Count</button>
-  
-    <p id="countingResult">Count: --</p>
-    <br>
-    <button onclick="switchScreen('menu')">Back to Menu</button>
-  </div>
-  
-
-  <script src="app.js"></script>
 </body>
 </html>
